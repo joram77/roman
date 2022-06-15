@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Service\NumberConvertService;
 use Romans\Filter\Exception;
-use Romans\Filter\IntToRoman;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,7 +37,6 @@ class NumberConvertController extends AbstractController
             }
         }
         return $this->render('number_convert/index.html.twig', [
-            'controller_name' => 'NumberConvertController',
             'numberConvertService' => $service,
             'number' => $number,
             'roman' => $roman,
