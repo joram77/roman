@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Arabic numeral to Roman conversion{% endblock %}
+
+{% block body %}
+    <main class="form-signin">
+        <h1 class="h3 mb-3 fw-normal">🔱 Convert Arabic numeral to Roman</h1>
+        <!-- Results -->
+        {% if(roman is not empty) %}
+            <div class="alert alert-success" role="alert">
+               Number {{ number }} in roman numerals is
+            </div>
+            <h2>{{ roman|default('') }}</h2>
+        {% endif %}
+        <!-- Alerts -->
+        {% if(error is not empty) %}
+            <div class="alert alert-warning" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+        <form>
+            <div class="form-floating">
+                <input name="number" value="{{ number }}" type="number" required="required" class="form-control"
+                       placeholder="1" min="1"  max="{{ constant('MAX_NUMBER', numberConvertService) }}">
+                <label for="number">Number</label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Convert</button>
+            <p class="mt-5 mb-3 text-muted">&copy; {{ 'now' | date('Y') }} Joram </p>
+        </form>
+    </main>
+{% endblock %}
