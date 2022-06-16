@@ -24,9 +24,14 @@ class NumberConvertService
      * @return string
      * @throws Exception
      */
-    function arabicToRoman(int $number): string
+    function arabicToRoman(int $number): ?string
     {
-        return $this->intToRomanService->filter($number);
+        if($number > 0 && $number <= self::MAX_NUMBER) {
+            return $this->intToRomanService->filter($number);
+        }
+        else {
+            return null;
+        }
     }
 
 }
