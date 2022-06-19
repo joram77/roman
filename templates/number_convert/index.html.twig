@@ -20,7 +20,7 @@
         {% endif %}
         <form>
             <div class="form-floating">
-                <input name="number" value="{{ number }}" type="number" required="required" class="form-control"
+                <input id="number" name="number" value="{{ number ?: '' }}" type="number" required="required" class="form-control"
                        placeholder="1" min="1"  max="{{ constant('MAX_NUMBER', numberConvertService) }}">
                 <label for="number">Number</label>
             </div>
