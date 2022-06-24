@@ -15,7 +15,7 @@ class NumberConvertServiceTest extends TestCase
      */
     protected function setUp(): void
     {
-        $this->convertService = new NumberConvertService(new IntToRoman());
+        $this->convertService = new NumberConvertService();
     }
 
     public function testArabicToRomanI(): void
